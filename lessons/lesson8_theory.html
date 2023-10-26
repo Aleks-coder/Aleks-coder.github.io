@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>8.Работа со списками</title>
+	<link rel="icon" type="image/x-icon" href="../img/logo.ico">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/lesson.css">
+</head>
+
+<body class="h-100">
+	<div class="d-flex flex-row course-container">
+		<div class="w-100 position-relative custom-scrollbar">
+			<div class="container my-3">
+				<div class="row d-flex justify-content-center">
+					<div class="col-9">
+						<article class="mt-3 p-4 rounded bg-white">
+							<div class="mb-4">
+								<h1 class="">8.Работа со списками</h1>
+							</div>
+							<h2>Базовые приёмы</h2>
+							<p>
+								Чтобы создать список, нужно перечислить его элементы через запятую в квадратных скобках:
+								<code class="python-code">
+									<span class="python-var">numbers = [</span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">, </span><span class="python-number">64</span><span class="python-var">, </span><span class="python-number">17</span><span class="python-var">, </span><span class="python-number">10</span><span class="python-var">]</span><br>
+									<span class="python-var">languages = [</span>'Python'<span class="python-var">, </span>'C++'<span class="python-var">, </span>'Java'<span class="python-var">]</span>
+								</code>
+							</p>
+							<p>
+								Индексация в списках похожа на индексацию в строках. В списках индексу соответствует какое-то значение списка.
+							</p>
+							<p>
+								Список numbers состоит из 5 элементов, и каждый из них — целое число:
+								<ul>
+									<li>numbers[0] == 2;</li>
+									<li>numbers[1] == 4;</li>
+									<li>numbers[2] == 64;</li>
+									<li>numbers[3] == 17;</li>
+									<li>numbers[4] == 10.</li>
+								</ul>
+							</p>
+							<p>
+								Список languages состоит из 4 элементов, каждый из которых — строка:
+								<ul>
+									<li>languages[0] == 'Python';</li>
+									<li>languages[1] == 'C++';</li>
+									<li>languages[2] == 'Java'.</li>
+								</ul>
+							</p>
+							<p>
+								Значения, заключенные в квадратные скобки и отделенные запятыми, называются элементами списка. Список может содержать значения разных типов данных:
+								<code class="python-code">
+									<span class="python-var">info = [</span>'Timur'<span class="python-var">, </span><span class="python-number">1992</span><span class="python-var">, </span><span class="python-number">61.5</span><span class="python-var">]</span>
+								</code>
+							</p>
+							<p>
+								Для вывода всего списка можно применить функцию print. Функция <code>print()</code> выводит на экран элементы списка, в квадратных скобках, разделенные запятыми:
+								<code class="python-code">
+									<span class="python-var">numbers = [</span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">, </span><span class="python-number">6</span><span class="python-var">, </span><span class="python-number">8</span><span class="python-var">, </span><span class="python-number">10</span><span class="python-var">]</span><br>
+									<span class="python-var">languages = [</span>'Python'<span class="python-var">, </span>'C++'<span class="python-var">, </span>'Java'<span class="python-var">]</span><br>
+									<span class="python-func">print(</span><span class="python-var">numbers</span><span class="python-func">)</span><span class="code-comment"> # [2, 4, 6, 8, 10]</span><br>
+									<span class="python-func">print(</span><span class="python-var">languages</span><span class="python-func">)</span><span class="code-comment"> # ['Python', 'C#', 'C++']</span>
+								</code>
+							</p>
+							<p>
+								Операторы + и * можно использовать для списков. Оператор + соединяет все списки в один. Оператор * создаёт список с указанным количеством одних и тех же элементов:
+								<code class="python-code">
+									<span class="python-func">print(</span><span class="python-var">[</span>'a'<span class="python-var">, </span>'b'<span class="python-var">] + [</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">]</span><span class="python-func">)</span><span class="code-comment"> # ['a', 'b', 1, 4]</span><br>
+									<span class="python-func">print(</span><span class="python-var">[</span>'a'<span class="python-var">, </span>'b'<span class="python-var">] * </span><span class="python-number">3</span><span class="python-func">)</span><span class="code-comment"> # ['a', 'b', 'a', 'b', 'a', 'b']</span>
+								</code>
+							</p>
+							<p>
+								Мы можем найти длину списку с помощью функции len:
+								<code class="python-code">
+									<span class="python-var">a = [</span>'a'<span class="python-var">, </span>'b'<span class="python-var">, </span>'c'<span class="python-var">, </span>'1'<span class="python-var">, </span>'2'<span class="python-var">, </span>'3'<span class="python-var">]</span><br>
+									<span class="python-func">print(len(</span><span class="python-var">a</span><span class="python-func">))</span><span class="code-comment"> # 6</span>
+								</code>
+							</p>
+							<p>
+								С помощью оператора in, мы можем проверять, находится ли какое-то значение в списке:
+								<code class="python-code">
+									<span class="python-var">foods = [</span>'хлеб'<span class="python-var">, </span>'молоко'<span class="python-var">, </span>'печенье'<span class="python-var">]</span><br>
+									<span class="python-func">if </span>'молоко'<span class="python-func"> in </span><span class="python-var">s:</span><br>
+									<span class="python-func ps-5">print(</span>"Нужно купить молоко"<span class="python-func">)</span><br>
+									<span class="python-func">else</span><span class="python-var">:</span><br>
+									<span class="python-func ps-5">print(</span>"Молоко покупать не надо"<span class="python-func">)</span><br>
+								</code>
+							</p>
+							<p>
+								Python имеет встроенную функцию <code>list()</code>, которая помимо создания пустого списка может преобразовывать некоторые типы объектов в списки.
+								Например, мы знаем, что функция <code>range()</code> создает последовательность целых чисел в заданном диапазоне. Для преобразования этой последовательности в список, мы пишем следующий код:
+								<code class="python-code">
+									<span class="python-var">numbers = <span><span class="python-func">list(range(</span><span class="python-number">5</span><span class="python-func">))</span>
+								</code>
+							</p>
+							<p>
+								Во время исполнения этого кода происходит следующее:
+								<ol>
+									<li>Вызывается функция <code>range()</code>, в которую в качестве аргумента передается число 5;</li>
+									<li>Эта функция возвращает последовательность чисел 0, 1, 2, 3, 4;</li>
+									<li>Последовательность чисел 0, 1, 2, 3, 4 передается в качестве аргумента в функцию <code>list()</code>;</li>
+									<li>Функция <code>list()</code> возвращает список [0, 1, 2, 3, 4];</li>
+									<li>Список [0, 1, 2, 3, 4] присваивается переменной numbers.</li>
+								</ol>
+							</p>
+							<p>
+								Точно так же с помощью функции <code>list()</code> мы можем создать список из символов строки. Для преобразования строки в список мы пишем следующий код:
+								<code class="python-code">
+									<span class="python-var">s = </span>'abcde'<br>
+									<span class="python-var">chars = </span><span class="python-func">list(</span><span class="python-var">s</span><span class="python-func">)</span><br>
+									<span class="python-func">print(</span><span class="python-var">chars</span><span class="python-func">)</span><span class="code-comment"> # ['a', 'b', 'c', 'd', 'e']</span>
+								</code>
+							</p>
+							<h2>Срезы списков</h2>
+							<p>
+								С помощью среза мы можем получить несколько элементов списка, создав диапазон индексов, разделенных двоеточием:
+								<code class="python-code">
+									<span class="python-var">numbers = [</span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">, </span><span class="python-number">6</span><span class="python-var">, </span><span class="python-number">8</span><span class="python-var">, </span><span class="python-number">10</span><span class="python-var">]</span><br>
+									<span class="python-func">print(</span><span class="python-var">numbers[</span><span class="python-number">1</span><span class="python-var">:</span><span class="python-number">3</span><span class="python-var">]</span><span class="python-func">)</span><span class="code-comment"> # [4, 6]</span><br>
+									<span class="python-func">print(</span><span class="python-var">numbers[</span><span class="python-number">2</span><span class="python-var">:</span><span class="python-number">5</span><span class="python-var">]</span><span class="python-func">)</span><span class="code-comment"> # [6, 8, 10]</span>
+								</code>
+							</p>
+							<p>
+								При построении среза первое число – это то место, где начинается срез (включительно), а второе – это место, где заканчивается срез (невключительно).
+								Разрезая списки, мы создаем новые списки, по сути, подсписки исходного.
+							</p>
+							<p>
+								При использовании срезов со списками мы также можем опускать второй параметр в срезе <code>numbers[x:]</code> (но поставить двоеточие), тогда срез берется до конца списка. 
+								Аналогично если опустить первый параметр <code>numbers[:y]</code>, то можно взять срез от начала списка. Срез <code>numbers[:]</code> возвращает копию исходного списка:
+								<code class="python-code">
+									<span class="python-var">numbers = [</span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">, </span><span class="python-number">6</span><span class="python-var">, </span><span class="python-number">8</span><span class="python-var">, </span><span class="python-number">10</span><span class="python-var">, </span><span class="python-number">12</span><span class="python-var">, </span><span class="python-number">14</span><span class="python-var">]</span><br>
+									<span class="python-func">print(</span><span class="python-var">numbers[</span><span class="python-number">4</span><span class="python-var">:</span><span class="python-var">]</span><span class="python-func">)</span><span class="code-comment"> # [10, 12, 14]</span><br>
+									<span class="python-func">print(</span><span class="python-var">numbers[</span><span class="python-var">:</span><span class="python-number">5</span><span class="python-var">]</span><span class="python-func">)</span><span class="code-comment"> # [2, 4, 6, 8, 10]</span>
+								</code>
+							</p>
+							<p>
+								Как и в строках, мы можем использовать отрицательные индексы в срезах списков.
+							</p>
+							<p>
+								Для изменения целого диапазона элементов списка можно использовать срезы. 
+								Например, если мы хотим перевести на русский язык названия фруктов 'banana', 'cherry', 'kiwi', то это можно сделать с помощью среза.
+								<code class="python-code">
+									<span class="python-var">fruits = [</span>'apple'<span class="python-var">, </span>'apricot'<span class="python-var">, </span>'banana'<span class="python-var">, </span>'cherry'<span class="python-var">, </span>'kiwi'<span class="python-var">, </span>'lemon'<span class="python-var">]</span><br>
+									<span class="python-var">fruits[</span><span class="python-number">2</span><span class="python-var">:</span><span class="python-number">5</span><span class="python-var">] = [</span>'банан'<span class="python-var">, </span>'вишня'<span class="python-var">, </span>'киви'<span class="python-var">]</span><br><br>
+									<span class="python-func">print(</span><span class="python-var">fruits</span><span class="python-func">)</span><span class="code-comment"> # ['apple', 'apricot', 'банан', 'вишня', 'киви', 'lemon']</span>
+								</code>
+							</p>
+							<p>
+								Также мы можем удалять элемент списка по индексу или подсписок с помощью среза через оператор del:
+								<code class="python-code">
+									<span class="python-var">numbers = [</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">3</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">, </span><span class="python-number">5</span><span class="python-var">, </span><span class="python-number">6</span><span class="python-var">, </span><span class="python-number">7</span><span class="python-var">, </span><span class="python-number">8</span><span class="python-var">, </span><span class="python-number">9</span><span class="python-var">]</span><br><br>
+									<span class="python-import">del </span><span class="python-var">numbers[</span><span class="python-number">5</span><span class="python-var">]</span><br>
+									<span class="python-func">print(</span><span class="python-var">numbers</span><span class="python-func">)</span><span class="code-comment"> # [1, 2, 3, 4, 5, 7, 8, 9]</span><br><br>
+									<span class="python-import">del </span><span class="python-var">numbers[</span><span class="python-number">2</span><span class="python-var">:</span><span class="python-number">6</span><span class="python-var">]</span><br>
+									<span class="python-func">print(</span><span class="python-var">numbers</span><span class="python-func">)</span><span class="code-comment"> # [1, 2, 8, 9]</span>
+								</code>
+							</p>
+							<p>
+								Мы можем удалить все элементы на четных позициях (0, 2, 4, ...) исходного списка.
+								<code class="python-code">
+									<span class="python-var">numbers = [</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">3</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">, </span><span class="python-number">5</span><span class="python-var">, </span><span class="python-number">6</span><span class="python-var">, </span><span class="python-number">7</span><span class="python-var">, </span><span class="python-number">8</span><span class="python-var">, </span><span class="python-number">9</span><span class="python-var">]</span><br>
+									<span class="python-import">del </span><span class="python-var">numbers[</span><span class="python-var">::</span><span class="python-number">2</span><span class="python-var">]</span><br><br>
+									<span class="python-func">print(</span><span class="python-var">numbers</span><span class="python-func">)</span><span class="code-comment"> # [2, 4, 6, 8]</span>
+								</code>
+							</p>
+							<h2>Встроеные функции</h2>
+							<p>
+								Встроенная функция <code>sum()</code> принимает в качестве аргумента список чисел и вычисляет сумму его элементов:
+								<code class="python-code">
+									<span class="python-var">numbers = [</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">3</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">, </span><span class="python-number">5</span><span class="python-var">, </span><span class="python-number">6</span><span class="python-var">, </span><span class="python-number">7</span><span class="python-var">, </span><span class="python-number">8</span><span class="python-var">, </span><span class="python-number">9</span><span class="python-var">]</span><br>
+									<span class="python-func">print(</span>'Сумма всех элементов списка ='<span class="python-var">, </span><span class="python-func">sum(</span><span class="python-var">numbers</span><span class="python-func">))</span><span class="code-comment"> # 'Сумма всех элементов списка = 45'</span>
+								</code>
+							</p>
+							<p>
+								Встроенные функции <code>min()</code> и <code>max()</code> принимают в качестве аргумента список и находят минимальный и максимальный элементы соответственно:
+								<code class="python-code">
+									<span class="python-var">numbers = [</span><span class="python-number">3</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">, </span><span class="python-number">10</span><span class="python-var">, </span><span class="python-number">3333</span><span class="python-var">, </span>
+									<span class="python-number">12</span><span class="python-var">, </span><span class="python-number">-7</span><span class="python-var">, </span><span class="python-number">-5</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">]</span><br>
+									<span class="python-func">print(</span>'Минимальный элемент ='<span class="python-var">, </span><span class="python-func">min(</span><span class="python-var">numbers</span><span class="python-func">))</span><span class="code-comment"> # 'Минимальный элемент = -7'</span><br>
+									<span class="python-func">print(</span>'Минимальный элемент ='<span class="python-var">, </span><span class="python-func">max(</span><span class="python-var">numbers</span><span class="python-func">))</span><span class="code-comment"> # 'Максимальный элемент = 3333'</span>
+								</code>
+							</p>
+							<p>
+								Встроенная функция <code>sorted()</code> принимает в качестве аргумента список и возвращает отсортированный, также может принять аргумент reverse, если он равен False (по умолчанию), то сортирует по возрастанию если равен True, то по убыванию
+								<code class="python-code">
+									<span class="python-var">a = [</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">7</span><span class="python-var">, </span><span class="python-number">-3</span><span class="python-var">, </span><span class="python-number">9</span><span class="python-var">, </span><span class="python-number">0</span><span class="python-var">, </span>
+									<span class="python-number">-67</span><span class="python-var">, </span><span class="python-number">34</span><span class="python-var">, </span><span class="python-number">12</span><span class="python-var">, </span><span class="python-number">45</span><span class="python-var">, </span><span class="python-number">1000</span><span class="python-var">, </span><span class="python-number">6</span><span class="python-var">, </span>
+									<span class="python-number">8</span><span class="python-var">, </span><span class="python-number">-2</span><span class="python-var">, </span><span class="python-number">99</span><span class="python-var">]</span><br>
+									<span class="python-var">sort1_a = </span><span class="python-func">sorted(</span><span class="python-var">a</span><span class="python-func">)</span><br>
+									<span class="python-func">print(</span><span class="python-var">sort1_a</span><span class="python-func">)</span><span class="code-comment"> # [-67, -3, -2, 0, 1, 6, 7, 8, 9, 12, 34, 45, 99, 1000]</span><br><br>
+									<span class="python-var">sort1_a = </span><span class="python-func">sorted(</span><span class="python-var">a, reverse=</span><span class="code-comment">True</span><span class="python-func">)</span><br>
+									<span class="python-func">print(</span><span class="python-var">sort1_a</span><span class="python-func">)</span><span class="code-comment"> # [1000, 99, 45, 34, 12, 9, 8, 7, 6, 1, 0, -2, -3, -67]</span>
+								</code>
+							</p>
+							<h2>Методы списков</h2>
+							<p>
+								<code>l.append(m)</code> - добавляет в список l элемент m:
+								<code class="python-code">
+									<span class="python-var">numbers = [</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">3</span><span class="python-var">, </span>
+									<span class="python-number">5</span><span class="python-var">, </span><span class="python-number">8</span><span class="python-var">, </span><span class="python-number">13</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">]</span><br><br>
+									<span class="python-var">numbers.</span><span class="python-func">append(</span><span class="python-number">21</span><span class="python-func">)</span><br>
+									<span class="python-var">numbers.</span><span class="python-func">append(</span><span class="python-number">34</span><span class="python-func">)</span><br><br>
+									<span class="python-func">print(</span><span class="python-var">numbers</span><span class="python-func">)</span><span class="code-comment"> # [1, 1, 2, 3, 5, 8, 13, 21, 34]</span>
+								</code>
+							</p>
+							<p>
+								<code>l.count(m)</code> - выводит количество элементов m в списке l:
+								<code class="python-code">
+									<span class="python-var">names = [</span>'Timur'<span class="python-var">, </span>'Gvido'<span class="python-var">, </span>'Roman'<span class="python-var">, </span>'Timur'<span class="python-var">, </span>'Anders'<span class="python-var">, </span>'Timur'<span class="python-var">]</span><br><br>
+									<span class="python-var">cnt1 = names.</span><span class="python-func">count(</span>'Timur'<span class="python-func">)</span><br>
+									<span class="python-var">cnt2 = names.</span><span class="python-func">count(</span>'Josef'<span class="python-func">)</span><br>
+									<span class="python-func">print(</span><span class="python-var">cnt1</span><span class="python-func">)</span><span class="code-comment"> # 3</span><br>
+									<span class="python-func">print(</span><span class="python-var">cnt2</span><span class="python-func">)</span><span class="code-comment"> # 0</span>
+								</code>
+							</p>
+							<p>
+								<code>l.index(m)</code> - выводит индекс первого вхождения элемента m в списке l, если нет элемента m в списке, то происходит ошибка:
+								<code class="python-code">
+									<span class="python-var">names = [</span>'Gvido'<span class="python-var">, </span>'Roman'<span class="python-var">, </span>'Timur'<span class="python-var">, </span>'Anders'<span class="python-var">, </span>'Timur'<span class="python-var">]</span><br><br>
+									<span class="python-var">position = names.</span><span class="python-func">index(</span>'Timur'<span class="python-func">)</span><br>
+									<span class="python-func">print(</span><span class="python-var">position</span><span class="python-func">)</span><span class="code-comment"> # 2</span>
+								</code>
+								<code class="python-code">
+									<span class="python-var">names = [</span>'Gvido'<span class="python-var">, </span>'Roman'<span class="python-var">, </span>'Timur'<span class="python-var">]</span><br><br>
+									<span class="python-var">position = names.</span><span class="python-func">index(</span>'Anders'<span class="python-func">)</span><br>
+									<span class="python-func">print(</span><span class="python-var">position</span><span class="python-func">)</span><span class="code-comment"> #  ValueError: 'Anders' is not in list</span>
+								</code>
+							</p>
+							<p>
+								<code>l.remove(m)</code> - удаляет первый элемент m в списке l, если нет элемента m в списке, то происходит ошибка:
+								<code class="python-code">
+									<span class="python-var">food = [</span>'Рис'<span class="python-var">, </span>'Курица'<span class="python-var">, </span>'Рыба'<span class="python-var">, </span>'Брокколи'<span class="python-var">, </span>'Рис'<span class="python-var">]</span><br>
+									<span class="python-func">print(</span><span class="python-var">food</span><span class="python-func">)</span><span class="code-comment"> # ['Рис', 'Курица', 'Рыба', 'Брокколи', 'Рис']</span><br>
+									<span class="python-var">food.</span><span class="python-func">remove(</span>'Рис'<span class="python-func">)</span><br>
+									<span class="python-func">print(</span><span class="python-var">food</span><span class="python-func">)</span><span class="code-comment"> # ['Курица', 'Рыба', 'Брокколи', 'Рис']</span>
+								</code>
+							</p>
+							<p>
+								<code>l.sort(reverse)</code> - сортирует список по возрастанию, если reverse=False, а если reverse=True, то по убыванию, по умолчанию: reverse=False:
+								<code class="python-code">
+									<span class="python-var">a = [</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">7</span><span class="python-var">, </span><span class="python-number">-3</span><span class="python-var">, </span><span class="python-number">9</span><span class="python-var">, </span><span class="python-number">0</span><span class="python-var">, </span>
+									<span class="python-number">-67</span><span class="python-var">, </span><span class="python-number">34</span><span class="python-var">, </span><span class="python-number">12</span><span class="python-var">, </span><span class="python-number">45</span><span class="python-var">, </span><span class="python-number">1000</span><span class="python-var">, </span><span class="python-number">6</span><span class="python-var">, </span>
+									<span class="python-number">8</span><span class="python-var">, </span><span class="python-number">-2</span><span class="python-var">, </span><span class="python-number">99</span><span class="python-var">]</span><br>
+									<span class="python-var">a.</span><span class="python-func">sort()</span><br>
+									<span class="python-func">print(</span>'Отсортированный список:'<span class="python-var">, a</span><span class="python-func">)</span><br><span class="code-comment"> # Отсортированный список: [-67, -3, -2, 0, 1, 6, 7, 8, 9, 12, 34, 45, 99, 1000]</span><br><br>
+									<span class="python-var">a.</span><span class="python-func">sort(</span><span class="python-var">reverse=</span><span class="code-comment">True</span><span class="python-func">)</span><br>
+									<span class="python-func">print(</span>'Отсортированный список:'<span class="python-var">, a</span><span class="python-func">)</span><br><span class="code-comment"> # Отсортированный список: [1000, 99, 45, 34, 12, 9, 8, 7, 6, 1, 0, -2, -3, -67]</span>
+								</code>
+								Отличие от функции sorted в том, что sorted возвращает отсортированный список, но не изменяет его, а sort - изменяет сам список, но ничего не возвращает.
+								<code class="python-code">
+									<span class="python-var">a = [</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">7</span><span class="python-var">, </span><span class="python-number">-3</span><span class="python-var">, </span><span class="python-number">9</span><span class="python-var">, </span><span class="python-number">0</span><span class="python-var">, </span>
+									<span class="python-number">-67</span><span class="python-var">, </span><span class="python-number">34</span><span class="python-var">, </span><span class="python-number">12</span><span class="python-var">, </span><span class="python-number">45</span><span class="python-var">, </span><span class="python-number">1000</span><span class="python-var">, </span><span class="python-number">6</span><span class="python-var">, </span>
+									<span class="python-number">8</span><span class="python-var">, </span><span class="python-number">-2</span><span class="python-var">, </span><span class="python-number">99</span><span class="python-var">]</span><br><br>
+									
+									<span class="python-func">print(sorted(</span><span class="python-var">a</span><span class="python-func">))</span><span class="code-comment"> # [-67, -3, -2, 0, 1, 6, 7, 8, 9, 12, 34, 45, 99, 1000]</span><br>
+									<span class="python-func">print(</span><span class="python-var">a.</span><span class="python-func">sort()))</span><span class="code-comment"> # None </span>
+								</code>
+							</p>
+							<p>
+								Также мы можем вывести все значения списка без квадратных скобок [], для этого в функции print необходимо перед именем переменной со списком поставить знак звёздочки *:
+								<code class="python-code">
+									<span class="python-var">l = [</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">5</span><span class="python-var">, </span>"st"<span class="python-var">, </span><span class="python-number">1.043</span><span class="python-var">, </span>"And"<span class="python-var">]</span><br>
+									<span class="python-func">print(</span><span class="python-var">*l</span><span class="python-func">)</span><span class="code-comment"> # 1 5 st 1.043 And</span>
+								</code>
+							</p>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<aside class="h-100 border-start bg-white position-fixed">
+			<div class="row g-0">
+				<div class="col-12 col-sm-8 col-md-12">
+					<a class="btn btn-dark btn-lg w-100 h-100 rounded-0 d-flex justify-content-between" href="lesson8_test.html" role="button">
+						<span>Далее</span> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+						</svg>
+					</a>
+				</div>
+				<div class="col-12">
+					<div class="d-flex align-items-center border-bottom">
+						<a href="/" class="btn btn-link btn-lg rounded-0 text-body border-end">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+								<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+							</svg>
+						</a>
+						<a href="../course.html" class="btn btn-link rounded-0 text-decoration-none text-body w-100">
+							Курс
+						</a>
+					</div>
+					<div class="px-2 py-3 w-100">
+						<ul class="nav flex-column nav-justified">
+							<li class="nav-item text-start">
+								<a href="lesson8_theory.html" class="nav-link text-body fw-bold">Теория</a>
+							</li>
+							<li class="nav-item text-start">
+								<a href="lesson8_test.html" class="nav-link text-body">Тесты</a>
+							</li>
+							<li class="nav-item text-start">
+								<span class="nav-link text-body">Практика</span>
+							</li>
+							<li class="nav-item text-start">
+								<a href="lesson8_practice1.html" class="nav-link text-body">Задание 1</a>
+							</li>
+							<li>
+								<a href="lesson8_practice2.html" class="nav-link text-body">Задание 2</a>
+							</li>
+							<li>
+								<a href="lesson8_practice3.html" class="nav-link text-body">Задание 3</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</aside>
+	</div>
+</body>
+
+</html>
