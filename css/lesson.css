@@ -1,0 +1,70 @@
+:root {
+	--standart-border: 1px solid rgba(0, 0, 0, .3);
+}
+
+body {
+	background-color: #efefef;
+	width: calc(100% - 170px);
+}
+
+article {
+	margin-inline: auto;
+	margin-bottom: 100px;
+	font-size: 1.1rem;
+	line-height: 1.7;
+	padding: 10px;
+}
+
+aside {
+	width: 170px;
+	top: 0;
+	right: 0;
+}
+
+code.python-code {
+	color: #a57b69;
+	display: block;
+	background-color: #1e1e1e;
+	padding: 15px;
+	margin: 15px 0;
+	border-radius: 10px;
+}
+
+.python-func {
+	color: #4dc6ad;
+	font-weight: 600;
+}
+
+.python-import {
+	color: #d83f8b;
+}
+.python-number {
+	color: #a4bf92;
+}
+
+.python-var {
+	color: #cdcdcd;
+}
+
+.code-comment {
+	color: #999988;
+}
+
+.course-img {
+	max-width: 650px;
+}
+
+.quiz-card:last-child {
+	margin-bottom: 100px;
+}
+
+#code {
+	margin: 20px 0;
+	border: var(--standart-border);
+	border-radius: 3px;
+}
+
+.btn-outline-danger {
+	background-color: #dc3545 !important;
+	color: #FFF !important;
+}
