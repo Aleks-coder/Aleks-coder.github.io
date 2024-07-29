@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>5.Счетный цикл</title>
+	<link rel="icon" type="image/x-icon" href="../img/logo.ico">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/lesson.css">
+</head>
+<body>
+	<div class="d-flex flex-row course-container">
+		<div class="w-100 position-relative custom-scrollbar">
+			<div class="container my-3">
+				<div class="row d-flex justify-content-center">
+					<div class="col-9">
+						<div class="text-bocy rounded p-3 mb-3 bg-white">
+							<h2 class="h3">Задание 3.</h2>
+							<p>
+								На вход программе подается три натуральных числа m, p, n:
+								<ul>
+									<li>m: стартовое количество организмов;</li>
+									<li>p: среднесуточное увеличение в %;</li>
+									<li>n: количество дней для размножения.</li>
+								</ul>
+								Напишите программу, которая предсказывает размер популяции организмов. 
+								Программа должна выводить размер популяции в каждый день, начиная с 1 и заканчивая n-м днем.
+							</p>
+							<p>
+								Задача решается через <a href="https://ru.wikipedia.org/wiki/Сложные_проценты">сложный процент.</a>
+							</p>
+							<h5>Формат входных данных:</h5>
+							<p>На вход программе подается три натуральных числа.</p>
+							<h5>Формат выходных данных:</h5>
+							<p>Программа должна вывести текст в соответствии с условием задачи.</p><br>
+							<h5>Пример входных данных:</h5>
+							<p>
+								10 <br>
+								50 <br>
+								6
+							</p>
+							<h5>Пример выходных данных:</h5>
+							<p>
+								1 10.0 <br>
+								2 15.0 <br>
+								3 22.5 <br>
+								4 33.75 <br>
+								5 50.625 <br>
+								6 75.9375
+							</p>
+						</div>
+
+						<iframe src="https://trinket.io/embed/python/3663685e95" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+						
+						<table class="table mt-4 table-bordered border-secondary bg-white">
+							<thead>
+								<tr>
+									<th scope="col" class="text-center">#</th>
+									<th scope="col">Входные данные</th>
+									<th scope="col">Выходные данные</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" class="text-center">1</th>
+									<td>
+										10 <br>
+										50 <br>
+										6
+									</td>
+									<td>
+										1 10.0 <br>
+										2 15.0 <br>
+										3 22.5 <br>
+										4 33.75 <br>
+										5 50.625 <br>
+										6 75.9375
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="text-center">2</th>
+									<td>
+										100 <br>
+										25 <br>
+										1
+									</td>
+									<td>1 100</td>
+								</tr>
+								<tr>
+									<th scope="row" class="text-center">3</th>
+									<td>
+										120 <br>
+										25 <br>
+										4
+									</td>
+									<td>
+										1 120.0 <br>
+										2 150.0 <br>
+										3 187.5 <br>
+										4 234.375
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="text-center">4</th>
+									<td>
+										7 <br>
+										10 <br>
+										20
+									</td>
+									<td>
+										1 7.0 <br>
+										2 7.7 <br>
+										3 8.47 <br>
+										4 9.317 <br>
+										5 10.2487 <br>
+										6 11.27357 <br>
+										7 12.400927 <br>
+										8 13.6410197 <br>
+										9 15.00512167 <br>
+										10 16.505633837 <br>
+										11 18.1561972207 <br>
+										12 19.9718169428 <br>
+										13 21.968998637 <br>
+										14 24.1658985008 <br>
+										15 26.5824883508 <br>
+										16 29.2407371859 <br>
+										17 32.1648109045 <br>
+										18 35.381291995 <br>
+										19 38.9194211944 <br>
+										20 42.8113633139
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<aside class="h-100 border-start bg-white position-fixed">
+			<div class="row g-0">
+				<div class="col-12 col-sm-8 col-md-12">
+					<a class="btn btn-dark btn-lg w-100 h-100 rounded-0 d-flex justify-content-between" href="lesson5_practice4.html" role="button">
+						<span>Далее</span> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+						</svg>
+					</a>
+				</div>
+				<div class="col-12">
+					<div class="d-flex align-items-center border-bottom">
+						<a href="/" class="btn btn-link btn-lg rounded-0 text-body border-end">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+								<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+							</svg>
+						</a>
+						<a href="../course.html" class="btn btn-link rounded-0 text-decoration-none text-body w-100">
+							Курс
+						</a>
+					</div>
+					<div class="px-2 py-3 w-100">
+						<ul class="nav flex-column nav-justified">
+							<li class="nav-item text-start">
+								<a href="lesson5_theory.html" class="nav-link text-body">Теория</a>
+							</li>
+							<li class="nav-item text-start">
+								<a href="lesson5_test.html" class="nav-link text-body">Тесты</a>
+							</li>
+							<li class="nav-item text-start">
+								<span class="nav-link text-body fw-bold">Практика</span>
+							</li>
+							<li class="nav-item text-start">
+								<a href="lesson5_practice1.html" class="nav-link text-body">Задание 1</a>
+							</li>
+							<li>
+								<a href="lesson5_practice2.html" class="nav-link text-body">Задание 2</a>
+							</li>
+							<li>
+								<a href="lesson5_practice3.html" class="nav-link text-body fw-bold">Задание 3</a>
+							</li>
+							<li>
+								<a href="lesson5_practice4.html" class="nav-link text-body">Задание 4</a>
+							</li>
+							<li>
+								<a href="lesson5_practice5.html" class="nav-link text-body">Задание 5</a>
+							</li>
+							<li>
+								<a href="lesson5_practice6.html" class="nav-link text-body">Задание 6</a>
+							</li>
+							<li>
+								<a href="lesson5_practice7.html" class="nav-link text-body">Задание 7</a>
+							</li>
+							<li>
+								<a href="lesson5_practice8.html" class="nav-link text-body">Задание 8</a>
+							</li>
+							<li>
+								<a href="lesson5_practice9.html" class="nav-link text-body">Задание 9</a>
+							</li>
+							<li>
+								<a href="lesson5_practice10.html" class="nav-link text-body">Задание 10</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</aside>
+	</div>
+
+</body>
+</html>
