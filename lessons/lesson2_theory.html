@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>2.Типы данных</title>
+	<link rel="icon" type="image/x-icon" href="../img/logo.ico">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/lesson.css">
+</head>
+
+<body class="h-100">
+	<div class="d-flex flex-row course-container">
+		<div class="w-100 position-relative custom-scrollbar">
+			<div class="container my-3">
+				<div class="row d-flex justify-content-center">
+					<div class="col-9">
+						<article class="mt-3 p-4 rounded bg-white">
+							<div class="mb-4">
+								<h1 class="">2.Типы данных</h1>
+							</div>
+							<p>
+								В конце прошлого блока была рассмотрена следующая конструкция:
+								<code class="python-code">
+									<span class="python-var">name = </span><span class="python-func">input(</span>"Как тебя зовут? "<span class="python-func">)</span><br>
+								</code>
+								Она используется, чтобы записать введённые пользователем данные в переменную name.
+							</p>
+							<p>
+								В программировании постоянно возникает необходимость в сохранении и использовании каких-либо данных, для этих целей и используются переменные.
+								Создать переменную просто, для этого необходимо написать следующую конструкцию: [имя_переменной] = [значение]
+							</p>
+							<p>
+								Мы задаем имя переменной, можно это сделать, использую кириллицу и не только, но настоятельно рекомендуется делать это, использую только латиницу.
+								Затем задаем переменной какое-либо значение.
+							</p>
+							<p>
+								Остановимся на имени переменной чуть подробнее:
+								<ol>
+									<li>Имя переменной может содержать только латинские буквы, числа и символ нижнего подчеркивания;</li>
+									<li>Имя переменной не должно содержать пробелов;</li>
+									<li>Имя переменной не должно начинаться с цифры;</li>
+									<li>Регистр переменных важен: var и Var это разные переменные.</li>
+								</ol>
+							</p>
+							<p>
+								Поговорим о типах данных. Python различает разные типы данных и не даст, например, умножать строку на строку, 
+								с числами же мы можем выполнять разные операции, сложение, на пример.
+							</p>
+							<p>
+								Типы в Python и определенные ограничения на них защищают программы от случайных ошибок. Разберем подробнее некоторые типы. 
+							</p>
+							<h2>Числа: int и float</h2>
+							<p>
+								Первые два типа - int (от слова integer) и float. int обозначает целое число (10, 256), а float - действительное (3.14, 10.591). 
+								Для их вывода в отличии от строк не нужны кавычки: 
+								<code class="python-code">
+									<span class="python-func">print(</span><span class="python-number">6</span><span class="python-func">)</span><br>
+									<span class="python-func">print(</span><span class="python-number">12.02</span><span class="python-func">)</span>
+								</code>
+							</p>
+							<p>
+								Строка "10" и число 10, также как и "10.5" и 10.5 - разные вещи, хотя вывод через <code>print()</code> у них один:
+								<code class="python-code">
+									<span class="python-func">print(</span><span class="python-number">10</span><span class="python-func">)</span><span class="code-comment"> # 10</span><br>
+									<span class="python-func">print(</span>"10"<span class="python-func">)</span><span class="code-comment"> # 10</span>
+								</code>
+							</p>
+							<p>
+								С числами можно выполнять разные операции:
+								<ol>
+									<li>Сложение;</li>
+									<li>Вычитание;</li>
+									<li>Умножение;</li>
+									<li>Деление;</li>
+									<li>Возведение в степень;</li>
+									<li>Целочисленное деление;</li>
+									<li>Получение остатка от деления.</li>
+								</ol> 
+								<code class="python-code">
+									<span class="python-func">print(</span><span class="python-number">9</span><span class="python-var"> + </span><span class="python-number">3.5</span><span class="python-func">)</span><span class="code-comment"> # 12.5</span><br>
+									<span class="python-func">print(</span><span class="python-number">32.3</span><span class="python-var"> - </span><span class="python-number">41.1</span><span class="python-func">)</span><span class="code-comment"> # -8.8</span><br>
+									<span class="python-func">print(</span><span class="python-number">3.4</span><span class="python-var"> * </span><span class="python-number">5</span><span class="python-func">)</span></span><span class="code-comment"> # 17.0</span><br>
+									<span class="python-func">print(</span><span class="python-number">22</span><span class="python-var"> / </span><span class="python-number">3</span><span class="python-func">)</span></span><span class="code-comment"> # 7.333333333333333</span><br>
+									<span class="python-func">print(</span><span class="python-number">2</span><span class="python-var"> ** </span><span class="python-number">5</span><span class="python-func">)</span></span><span class="code-comment"> # 32</span><br>
+									<span class="python-func">print(</span><span class="python-number">23</span><span class="python-var"> // </span><span class="python-number">10</span><span class="python-func">)</span></span><span class="code-comment"> # 2</span><br>
+									<span class="python-func">print(</span><span class="python-number">23</span><span class="python-var"> % </span><span class="python-number">10</span><span class="python-func">)</span></span><span class="code-comment"> # 3</span>
+								</code>
+							</p>
+							<p>
+								У всех них есть приоритет выполнения, он такой же как в математике: 
+								<code class="python-code">
+									<span class="python-func">print(</span><span class="python-number">10</span><span class="python-var"> + </span><span class="python-number">2</span><span class="python-var"> * </span><span class="python-number">3.5</span><span class="python-func">)</span><span class="code-comment"> # 17.0</span>										
+								</code>
+								У операций целочисленное деление и получение остатка от деления приоритет как у деления и умножения.
+							</p>
+							<p>
+								Также мы можем использовать скобки: 
+								<code class="python-code">
+									<span class="python-func">print((</span><span class="python-number">10</span><span class="python-var"> + </span><span class="python-number">2</span><span class="python-func">)</span><span class="python-var"> * </span><span class="python-number">3.5</span><span class="python-func">)</span><span class="code-comment"> # 42.0</span>
+								</code>
+							</p>
+							<p>
+								При работе с переменными мы можем выполнять действия разными путями:
+								<code class="python-code">
+									<span class="code-comment"># 1 способ</span><br>
+									<span class="python-var">n = </span><span class="python-number">10</span><br>
+									<span class="python-var">n = n * </span><span class="python-number">2</span><span class="python-var"> + </span><span class="python-number">2.5</span><br>
+									<span class="python-func">print(</span><span class="python-var">n</span><span class="python-func">)</span> <span class="code-comment"># 22.5</span><br><br>
+									<span class="code-comment"># 2 способ</span><br>
+									<span class="python-var">n = </span><span class="python-number">10</span><br>
+									<span class="python-var">n *= </span><span class="python-number">2</span><br>
+									<span class="python-var">n += </span><span class="python-number">2.5</span><br>
+									<span class="python-func">print(</span><span class="python-var">n</span><span class="python-func">)</span> <span class="code-comment"># 22.5</span>
+								</code>
+							</p>
+							<h2>Строки</h2>
+							<p>
+								Тип str (от слова string) является типом строк в Python. Мы можем с ними проводить некоторые операции:
+								<ol>
+									<li>Сложение строк (конкатенация);</li>
+									<li>Умножение строки на целое число.</li>
+								</ol>
+								<code class="python-code">
+									<span class="python-func">print(</span>"ab"<span class="python-var"> + </span>"cd"<span class="python-func">)</span><span class="code-comment"> # abcd</span><br>
+									<span class="python-func">print(</span>"ab"<span class="python-var"> * </span><span class="python-number">3</span><span class="python-func">)</span><span class="code-comment"> # ababab</span>
+								</code>
+							</p>
+							<p>
+								Можем обращаться к строкам по индексам, чтобы достать отдельную подстроку (индексирование в Python начинается с 0, т.е. первому символу соответствует индекс 0, второму - 1 и т.д.):
+								<code class="python-code">
+									<span class="python-var">greating = </span>"Hello, World!"<br>
+									<span class="python-func">print(</span><span class="python-var">greating[</span><span class="python-number">0</span><span class="python-var">]</span><span class="python-func">)</span><span class="code-comment"> # H</span><br>
+									<span class="python-func">print(</span><span class="python-var">greating[</span><span class="python-number">5</span><span class="python-var">]</span><span class="python-func">)</span><span class="code-comment"> # ,</span>
+								</code>
+								Об остальном про строки будет рассказано в отдельном блоке.
+							</p>
+							<h2>Списки</h2>
+							<p>
+								Тип list является типом списка в Python. Мы можем хранить в списке разные типы данных, даже сами списки:
+								<code class="python-code">
+									<span class="python-var">l = [</span><span class="python-number">10</span><span class="python-var">, </span>"abc"<span class="python-var">, </span><span class="python-number">4.23</span><span class="python-var">, []]</span><br>
+									<span class="python-func">print(</span><span class="python-var">l</span><span class="python-func">)</span><span class="code-comment"> # [10, "abc", 4.23, []]</span>
+								</code>
+							</p>
+							<p>
+								Со списками операции такие же как со строками:
+								<code class="python-code">
+									<span class="python-var">l = [</span><span class="python-number">10</span><span class="python-var">, </span>"abc"<span class="python-var">, </span><span class="python-number">4.23</span><span class="python-var">, []]</span><br>
+									<span class="python-var">l += [</span><span class="python-number">12.5</span><span class="python-var">, </span>"Hello"<span class="python-var">]</span><br>
+									<span class="python-func">print(</span><span class="python-var">l</span><span class="python-func">)</span><span class="code-comment"> # [10, "abc", 4.23, [], 12.5, "Hello"]</span><br>
+									<span class="python-var">l *= </span><span class="python-number">2</span><br>
+									<span class="python-func">print(</span><span class="python-var">l</span><span class="python-func">)</span><span class="code-comment"> # [10, "abc", 4.23, [], 12.5, "Hello", 10, "abc", 4.23, [], 12.5, "Hello"]</span><br>
+								</code>
+							</p>
+							<p>
+								Можем обращаться к спискам по индексам, чтобы достать отдельный элемент:
+								<code class="python-code">
+									<span class="python-var">l = [</span><span class="python-number">10</span><span class="python-var">, </span>"abc"<span class="python-var">, </span><span class="python-number">4.23</span><span class="python-var">, [</span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">5.0</span><span class="python-var">]]</span><br>
+									<span class="python-func">print(</span><span class="python-var">l[</span><span class="python-number">1</span><span class="python-var">]</span><span class="python-func">)</span><span class="code-comment"> # "abc"</span><br>
+									<span class="python-func">print(</span><span class="python-var">l[</span><span class="python-number">3</span><span class="python-var">]</span><span class="python-func">)</span><span class="code-comment"> # [2, 5.0]</span>
+								</code>
+							</p>
+							<p>
+								Также можем изменять списки по индексам:
+								<code class="python-code">
+									<span class="python-var">l = [</span><span class="python-number">10</span><span class="python-var">, </span>"abc"<span class="python-var">, </span><span class="python-number">4.23</span><span class="python-var">, [</span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">5.0</span><span class="python-var">]]</span><br>
+									<span class="python-var">l[</span><span class="python-number">2</span><span class="python-var">] = </span>"дробное число"<br>
+									<span class="python-func">print(</span><span class="python-var">l</span><span class="python-func">)</span><span class="code-comment"> # [10, "abc", "дробное число", [2, 5.0]]</span>
+								</code>
+								Об остальном про списки будет рассказано в отдельном блоке.
+							</p>
+							<h2>Множества</h2>
+							<p>
+								Тип set является типом множества в Python. Мы можем хранить в множестве разные типы данных (также как и в списках), особенностью множества является то, что в нем хранятся уникальные значения:
+								<code class="python-code">
+									<span class="python-var">abc = {</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">3.0</span><span class="python-var">, </span><span class="python-number">2</span><span class="python-var">, </span>"abc"<span class="python-var">, </span><span class="python-number">2</span><span class="python-var">, </span>"abc"<span class="python-var">, </span><span class="python-number">3</span><span class="python-var">}</span><br>
+									<span class="python-func">print(</span><span class="python-var">abc</span><span class="python-func">)</span><span class="code-comment"> # {1, 2, 3.0, "abc"}</span>
+								</code>
+								Также вывод множества осуществляется рандомно, т.е. значения могут выводится в разном порядке.
+							</p>
+							<p>
+								В рамках данного курса работа с множествами ограничивается информацией выше.
+							</p>
+							<h2>Словари</h2>
+							<p>
+								Тип dict (от слова dictionary) является типом словаря в Python. Его особенность в том, что мы можем сохранять данные в формате [ключ]: [значение]:
+								<code class="python-code">
+									<span class="python-var">d = {</span><span class="python-number">1</span><span class="python-var">: </span>"a"<span class="python-var">, </span><span class="python-number">2</span><span class="python-var">: </span>"abc"<span class="python-var">, </span>"Hey"<span class="python-var">: </span><span class="python-number">20.5</span><span class="python-var">}</span><br>
+									<span class="python-func">print(</span><span class="python-var">d</span><span class="python-func">)</span><span class="code-comment"> # {1: "a", 2: "abc", "Hey": 20.5}</span>
+								</code>
+							</p>
+							<p>
+								Например ключу 1 в данном примере соответствует значение "a", а ключу "Hey" - значение 20.5.
+							</p>
+							<p>
+								Значениями могут быть любые типы данных, а ключами только неизменяемые: int, float, str, tuple.
+							</p>
+							<p>
+								В рамках данного курса работа со словарями не затрагивается.
+							</p>
+							<h2>Кортежи</h2>
+							<p>
+								Тип tuple является кортежем в Python. Проще говоря, это неизменяемый список, некоторые действия, которые можно проводить со списками, нельзя проделать с кортежами:
+								<code class="python-code">
+									<span class="python-var">d = [</span>"a"<span class="python-var">, </span><span class="python-number">15</span><span class="python-var">]</span><br>
+									<span class="python-var">l[</span><span class="python-number">1</span><span class="python-var">] = </span><span class="python-number">10</span><br>
+									<span class="python-func">print(</span><span class="python-var">l</span><span class="python-func">)</span><span class="code-comment"> # ["a", 10]</span>
+
+									<span class="python-var">s = (</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">2.0</span><span class="python-var">)</span><br>
+									<span class="python-var">s[</span><span class="python-number">1</span><span class="python-var">] = </span><span class="python-number">10</span><span class="code-comment"> # TypeError: 'tuple' object does not support item assignment</span>
+								</code>
+								В рамках данного курса работа с кортежами не затрагивается.
+							</p>
+							<h2>Логическое значение</h2>
+							<p>
+								Тип bool (от слова boolean) является логическим значением в Python. Принимает только значения True или False.
+								<code class="python-code">
+									<span class="python-var">b = </span><span class="code-comment">True</span>
+								</code>
+							</p>
+							<h2>Преобразование из одного типа в другой</h2>
+							<p>
+								Для начала рассмотрим следующие конструкции создания различных переменных с разными типами данных:
+								<code class="python-code">
+									<span class="python-var">a = </span><span class="python-func">str()</span><span class="code-comment"> # то же самое a = ""</span><br>
+									<span class="python-var">b = </span><span class="python-func">int()</span><span class="code-comment"> # то же самое b = 0</span><br>
+									<span class="python-var">c = </span><span class="python-func">list()</span><span class="code-comment"> # то же самое с = []</span><br>
+									<span class="python-var">d = </span><span class="python-func">set()</span><span class="code-comment"> # нет альтернативы</span><br>
+									<span class="python-var">e = </span><span class="python-func">dict()</span><span class="code-comment"> # то же самое e = {}</span><br>
+									<span class="python-var">f = </span><span class="python-func">tuple()</span><span class="code-comment"> # то же самое f = ()</span><br>
+									<span class="python-var">g = </span><span class="python-func">bool()</span><span class="code-comment"> # то же самое g = False</span>
+								</code>
+							</p>
+							<p>
+								Чтобы преобразовать один тип в другой мы используем конструкцию [тип]([значение]), но не все типы переводятся из одних в другие:
+								<code class="python-code">
+									<span class="python-var">d = {</span><span class="python-number">1</span><span class="python-var">: </span>"a"<span class="python-var">, </span><span class="python-number">2</span><span class="python-var">: </span>"abc"<span class="python-var"><span class="python-var">}</span><br>
+									<span class="python-var">num = </span><span class="python-func">int(d)</span><br><span class="code-comment"> # TypeError: int() argument must be a string, a bytes-like object or a real number, not 'dict'</span><br>
+								</code>
+								<code class="python-code">
+									<span class="python-var">s = </span><span class="python-number">13.5</span><br>
+									<span class="python-func">print(int(</span><span class="python-var">s</span><span class="python-func">))</span><span class="code-comment"> # 13</span>
+								</code>
+								<code class="python-code">
+									<span class="python-var">l = [</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">2</span><span class="python-var">, </span><span class="python-number">5</span><span class="python-var">, </span>
+									<span class="python-number">2.0</span><span class="python-var">, </span>"abc"<span class="python-var">, </span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">2</span><span class="python-var">, </span>
+									<span class="python-number">5</span><span class="python-var">]</span><br>
+									<span class="python-func">print(set(</span><span class="python-var">l</span><span class="python-func">))</span><span class="code-comment"> # {1, 2, 5, "abc"}</span>
+								</code>
+							</p>
+							<p>
+								При операциях чисел типов int и float происходит неявное преобразование int к float, это единственное неявное преобразование типов в Python. 
+								В остальном неявное преобразование не используется, чтобы избежать непредсказуемого поведения программы:
+								<code class="python-code">
+									<span class="python-var">a = </span><span class="python-number">2</span><br>
+									<span class="python-var">b = </span><span class="python-number">1.5</span><br>
+									<span class="python-func">print(</span><span class="python-var">a</span><span class="python-var"> + </span><span class="python-var">b</span><span class="python-func">)</span><span class="code-comment"> # 3.5</span><br><br>
+									<span class="python-var">c = [</span><span class="python-number">1.1</span><span class="python-var">, </span><span class="python-number">4</span><span class="python-var">]</span><br>
+									<span class="python-var">d = {</span><span class="python-number">2</span><span class="python-var">, </span>"a"<span class="python-var">}</span><br>
+									<span class="python-func">print(</span><span class="python-var">c</span><span class="python-var"> + </span><span class="python-var">d</span><span class="python-func">)</span><span class="code-comment"> # TypeError: can only concatenate list (not "set") to list</span>
+								</code>
+							</p>
+							<p>
+								Рассмотрим следующую конструкцию:
+								<code class="python-code">
+									<span class="python-var">x = </span><span class="python-func">int(input(</span>'Введите первое число'<span class="python-func">))</span><br>
+									<span class="python-var">y = </span><span class="python-func">int(input(</span>'Введите второе число'<span class="python-func">))</span><br><br>
+									<span class="code-comment"># 1 способ</span><br>
+									<span class="python-func">print(</span><span class="python-var">x, </span>'+'<span class="python-var">, y, </span>'='<span class="python-var">, x + y</span><span class="python-func">)</span><br><br>
+									<span class="code-comment"># 2 способ</span><br>
+									<span class="python-func">print(str(</span><span class="python-var">x</span><span class="python-func">)</span><span class="python-var"> + </span>' + '<span class="python-var"> + </span><span class="python-func">str(</span>
+									<span class="python-var">y</span><span class="python-func">)</span><span class="python-var"> + </span>' = '<span class="python-var"> + </span><span class="python-func">str(</span><span class="python-var">x + y</span><span class="python-func">))</span>
+								</code>
+							</p>
+							<p>
+								В первых двух строках кода мы попросили пользователя ввести число, после чего с помощью <code>int()</code> преобразовали значения 
+								переменных x и y к целым числам (по умолчанию мы с помощью input получаем строки (данные типа str).
+							</p>
+							<p>
+								В 1 способе вывода мы передаем функции print несколько значений, которые она выводит и делит их пробелами, т.к. мы поделили значения запятой.
+								В 2 способе вывода мы передаем функции print строку, которая получена путем сложения (конкатенации) нескольких строк, в этом случае мы вместо "+" записали " + ", 
+								чтобы сохранить красивый вывод, также применили функцию str, чтобы привести переменные к строковому типу.
+							</p>
+							<p>
+								Стоит также упомянуть преобразования любых типов к логическому значению (тип bool). Преобразования просходят, исходя из следующей логики:
+								<ol>
+									<li>
+										Тип int. Приводится к False, если значение 0, в ином случае приводится к True
+										<code class="python-code">
+											<span class="python-func">print(bool(</span><span class="python-number">0</span><span class="python-func">))</span><span class="code-comment"> # False</span><br>
+											<span class="python-func">print(bool(</span><span class="python-number">15</span><span class="python-func">))</span><span class="code-comment"> # True</span><br>
+											<span class="python-func">print(bool(</span><span class="python-number">-3</span><span class="python-func">))</span><span class="code-comment"> # True</span>
+										</code>
+									</li>
+									<li>
+										Тип str. Приводится к False, если значение строки "" (пустая строка), в ином случае приводится к True
+										<code class="python-code">
+											<span class="python-func">print(bool(</span>''<span class="python-func">))</span><span class="code-comment"> # False</span><br>
+											<span class="python-func">print(bool(</span>"Hello"<span class="python-func">))</span><span class="code-comment"> # True</span><br>
+											<span class="python-func">print(bool(</span>" "<span class="python-func">))</span><span class="code-comment"> # True, пробел не является пустой строкой</span>
+										</code>
+									</li>
+									<li>
+										Типы, которые предназначены для хранения разных данных (list, tuple, dict, set). 
+										Если данный тип является пустым (для списка []), то приводится к False, в ином случае приводится к True.
+										<code class="python-code">
+											<span class="python-var">a = {}</span><br>
+											<span class="python-var">b = [</span><span class="python-number">0</span><span class="python-var">]</span><br>
+											<span class="python-var">c = [[]]</span><br><br>
+											<span class="python-func">print(bool(</span><span class="python-var">a</span><span class="python-func">))</span><span class="code-comment"> # False</span><br>
+											<span class="python-func">print(bool(</span><span class="python-var">b</span><span class="python-func">))</span><span class="code-comment"> # True</span><br>
+											<span class="python-func">print(bool(</span><span class="python-var">c</span><span class="python-func">))</span><br><span class="code-comment"> # True, в списке есть другой список, хоть и пустой, но он делает основной список непустым</span>
+										</code>
+									</li>
+								</ol>
+							</p>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<aside class="h-100 border-start bg-white position-fixed">
+			<div class="row g-0">
+				<div class="col-12 col-sm-8 col-md-12">
+					<a class="btn btn-dark btn-lg w-100 h-100 rounded-0 d-flex justify-content-between" href="lesson2_test.html" role="button">
+						<span>Далее</span> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+						</svg>
+					</a>
+				</div>
+				<div class="col-12">
+					<div class="d-flex align-items-center border-bottom">
+						<a href="/" class="btn btn-link btn-lg rounded-0 text-body border-end">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+								<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+							</svg>
+						</a>
+						<a href="../course.html" class="btn btn-link rounded-0 text-decoration-none text-body w-100">
+							Курс
+						</a>
+					</div>
+					<div class="px-2 py-3 w-100">
+						<ul class="nav flex-column nav-justified">
+							<li class="nav-item text-start">
+								<a href="lesson2_theory.html" class="nav-link text-body fw-bold">Теория</a>
+							</li>
+							<li class="nav-item text-start">
+								<a href="lesson2_test.html" class="nav-link text-body">Тесты</a>
+							</li>
+							<li class="nav-item text-start">
+								<span class="nav-link text-body">Практика</span>
+							</li>
+							<li class="nav-item text-start">
+								<a href="lesson2_practice1.html" class="nav-link text-body">Задание 1</a>
+							</li>
+							<li>
+								<a href="lesson2_practice2.html" class="nav-link text-body">Задание 2</a>
+							</li>
+							<li>
+								<a href="lesson2_practice3.html" class="nav-link text-body">Задание 3</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</aside>
+	</div>
+</body>
+
+</html>

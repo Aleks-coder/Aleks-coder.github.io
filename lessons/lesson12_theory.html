@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>12.Библиотека itertools</title>
+	<link rel="icon" type="image/x-icon" href="../img/logo.ico">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/lesson.css">
+</head>
+
+<body class="h-100">
+	<div class="d-flex flex-row course-container">
+		<div class="w-100 position-relative custom-scrollbar">
+			<div class="container my-3">
+				<div class="row d-flex justify-content-center">
+					<div class="col-9">
+						<article class="mt-3 p-4 rounded bg-white">
+							<div class="mb-4">
+								<h1 class="">12.Библиотека itertools</h1>
+							</div>
+							<p>Из этой библиотеки будут очень полезны пара функций для некоторых заданий из ЕГЭ</p>
+							<h2>product</h2>
+							<p>
+								В двух словах не описать, что делает функция product, поэтому разберём на примере:
+								<code class="python-code">
+									<span class="python-import">from </span><span class="python-var">itertools </span><span class="python-import">import </span><span class="python-var">product</span><br><br>
+									<span class="python-func">for </span><span class="python-var">item </span><span class="python-func">in list(product(</span>"АБВ"<span class="python-var">, repeat=</span><span class="python-number">3</span><span class="python-func">))</span><span class="python-var">:</span><br>
+									<span class="python-func ps-5">print(</span>""<span class="python-var">.</span><span class="python-func">join(</span><span class="python-var">item</span><span class="python-func">))</span>
+									
+								</code>
+								Вывод: <br>
+								ААА <br>
+								ААБ <br>
+								ААВ <br>
+								АБА <br>
+								АББ <br>
+								АБВ <br>
+								АВА <br>
+								АВБ <br>
+								АВВ <br>
+								БАА <br>
+								БАБ <br>
+								БАВ <br>
+								ББА <br>
+								БББ <br>
+								ББВ <br>
+								БВА <br>
+								БВБ <br>
+								БВВ <br>
+								ВАА <br>
+								ВАБ <br>
+								ВАВ <br>
+								ВБА <br>
+								ВББ <br>
+								ВБВ <br>
+								ВВА <br>
+								ВВБ <br>
+								ВВВ <br><br>
+
+								Функция перебрала все возможные комбинации из трёх значений с буквами "А", "Б", "В".
+							</p>
+							<p>
+								Решим задачу из ЕГЭ с его помощью: <br>
+								Все 5-буквенные слова, в составе которых могут быть буквы А, Л, Г, О, Р, И, Т, М, записаны в алфавитном порядке и пронумерованы начиная с 1. <br><br>
+								
+								Ниже приведено начало списка. <br>
+								ААААА <br>
+								ААААГ <br>
+								ААААИ <br>
+								ААААЛ <br>
+								ААААМ <br>
+								ААААО <br>
+								ААААР <br><br>
+								
+								Определите в этом списке количество слов с нечетными номерами, которые не начинаются с буквы Г и при этом содержат в своей записи не менее двух букв И. <br>
+								Решение:
+								<code class="python-code">
+									<span class="python-import">from </span><span class="python-var">itertools </span><span class="python-import">import </span><span class="python-var">product</span><br><br>
+									<span class="python-var">count = </span><span class="python-number">0</span><br>
+									<span class="python-var">number = </span><span class="python-number">0</span><br>
+									<span class="python-func">for </span><span class="python-var">p </span><span class="python-func">in product(sorted(</span>"АЛГОРИТМ"<span class="python-func">)</span><span class="python-var">, repeat=</span><span class="python-number">5</span><span class="python-func">)</span><span class="python-var">:</span><br>
+									<span class="code-comment ps-5"> # Т.к. в приведённом начале списка видно, что буквы идут в алфавитном порядке, </span><br>
+									<span class="code-comment ps-5"> # то мы отсортируем буквы с помощью sorted</span><br>
+									<span class="python-var ps-5">number += </span><span class="python-number">1</span><br>
+									<span class="python-func ps-5">if </span><span class="python-var">number % </span><span class="python-number">2 </span><span class="python-var">!=</span><span class="python-number"> 0 </span><span class="python-func">and </span>
+									<span class="python-var">p[</span><span class="python-number">0</span><span class="python-var">] != </span>"Г"<span class="python-func"> and </span><span class="python-var">p.</span><span class="python-func">count(</span>"И"<span class="python-func">)</span><span class="python-var"> >= </span><span class="python-number">2</span><span class="python-var">:</span><br>
+									<span class="code-comment ps-5"> # Исключаем слова, начинающиеся с буквы Г и содержащие в своей записи менее двух букв И</span><br>
+									<span class="python-var ps-5">count += </span><span class="python-number">1</span><br>
+									<span class="python-func">print(</span><span class="python-var">count</span><span class="python-func">)</span>
+								</code>
+								Вывод: <br>
+								2429
+							</p>
+							<h2>permutations</h2>
+							<p>
+								С функцией permutations уже проще, она возвращает все возможные перестановки из последовательности. Пример:
+								<code class="python-code">
+									<span class="python-import">from </span><span class="python-var">itertools </span><span class="python-import">import </span><span class="python-var">permutations</span><br><br>
+									<span class="python-func">for </span><span class="python-var">item </span><span class="python-func">in list(permutations(</span>"АБВ"<span class="python-func">))</span><span class="python-var">:</span><br>
+									<span class="python-func ps-5">print(</span>""<span class="python-var">.</span><span class="python-func">join(</span><span class="python-var">item</span><span class="python-func">))</span>
+								</code>
+								Вывод: <br>
+								АБВ <br>
+								АВБ <br>
+								БАВ <br>
+								БВА <br>
+								ВАБ <br>
+								ВБА
+							</p>
+							<p>
+								Задача с ЕГЭ: <br>
+								Сколько существует десятичных чисел, которые делятся на 5, при условии что все цифры числа различные? <br>
+								Решение:
+								<code class="python-code">
+									<span class="python-import">from </span><span class="python-var">itertools </span><span class="python-import">import </span><span class="python-var">permutations</span><br><br>
+									<span class="python-var">word = </span>'0123456789'<br>
+									<span class="python-var">count = </span><span class="python-number">0</span><br>
+									<span class="python-func">for </span><span class="python-var">j </span><span class="python-func">in range(</span><span class="python-number">1</span><span class="python-var">, </span><span class="python-number">11</span><span class="python-func">)</span><span class="python-var">:</span><br>
+									<span class="python-func ps-5">for </span><span class="python-var">i </span><span class="python-func">in permutations(</span><span class="python-var">word, j</span><span class="python-func">)</span><span class="python-var">:</span><br>
+									<span class="ps-5"></span><span class="python-var ps-5">x = </span>''<span class="python-var">.</span><span class="python-func">join(</span><span class="python-var">i</span><span class="python-func">)</span><br>
+									<span class="ps-5"></span><span class="python-func ps-5">if </span><span class="python-var">x[</span><span class="python-number">0</span><span class="python-var">] != </span>'0'<span class="python-func"> and </span><span class="python-var">(x[</span><span class="python-number">-1</span><span class="python-var">] == </span>'5'<span class="python-func"> or</span><span class="python-var"> x[</span><span class="python-number">-1</span><span class="python-var">] == </span>'0'<span class="python-var">):</span><br>
+									<span class="ps-5"></span><span class="ps-5"></span><span class="python-var ps-5">count += </span><span class="python-number">1</span><br>
+									<span class="python-func">print(</span><span class="python-number">count + </span><span class="python-number">1</span><span class="python-func">)</span><span class="code-comment"> # +1 случай когда число равно 0</span>
+								</code>
+								Вывод: <br>
+								1863219
+							</p>
+							<p class="fw-bold">Тесты для данного блока не предусмотрены.</p>
+							<p class="fw-bold">Задания в практике представлены для демонстрации, лучше решать задания из других источников!</p>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<aside class="h-100 border-start bg-white position-fixed">
+			<div class="row g-0">
+				<div class="col-12 col-sm-8 col-md-12">
+					<a class="btn btn-dark btn-lg w-100 h-100 rounded-0 d-flex justify-content-between" href="lesson12_practice1.html" role="button">
+						<span>Далее</span> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+						</svg>
+					</a>
+				</div>
+				<div class="col-12">
+					<div class="d-flex align-items-center border-bottom">
+						<a href="/" class="btn btn-link btn-lg rounded-0 text-body border-end">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+								<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+							</svg>
+						</a>
+						<a href="../course.html" class="btn btn-link rounded-0 text-decoration-none text-body w-100">
+							Курс
+						</a>
+					</div>
+					<div class="px-2 py-3 w-100">
+						<ul class="nav flex-column nav-justified">
+							<li class="nav-item text-start">
+								<a href="lesson12_theory.html" class="nav-link text-body fw-bold">Теория</a>
+							</li>
+							<li class="nav-item text-start">
+								<span class="nav-link text-body">Практика</span>
+							</li>
+							<li class="nav-item text-start">
+								<a href="lesson12_practice1.html" class="nav-link text-body">Задание 1</a>
+							</li>
+							<li>
+								<a href="lesson12_practice2.html" class="nav-link text-body">Задание 2</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</aside>
+	</div>
+</body>
+
+</html>
